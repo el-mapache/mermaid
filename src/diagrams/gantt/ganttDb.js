@@ -12,6 +12,7 @@ let todayMarker = '';
 let includes = [];
 let excludes = [];
 let links = {};
+let defaultTitle = 'Gantt chart';
 let title = '';
 let accDescription = '';
 let sections = [];
@@ -119,6 +120,10 @@ export const setTitle = function (txt) {
 
 export const getTitle = function () {
   return title;
+};
+
+export const getAccTitle = function () {
+  return title || defaultTitle;
 };
 
 export const setAccDescription = function (txt) {
@@ -651,6 +656,7 @@ export default {
   getTodayMarker,
   setTitle,
   getTitle,
+  getAccTitle,
   setAccDescription,
   getAccDescription,
   addSection,

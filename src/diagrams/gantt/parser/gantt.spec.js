@@ -168,7 +168,7 @@ describe('when parsing a gantt diagram it', function () {
       'section Section\n' +
       'A task :a1, 2014-01-01, 30d\n';
 
-    const output = parser.parse(ganttString);
+    parser.parse(ganttString);
 
     expect(ganttDb.getTitle()).toBe(expectedTitle);
     expect(ganttDb.getAccDescription()).toBe(expectedAccDescription);

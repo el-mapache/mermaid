@@ -15,7 +15,7 @@ export default function addSVGAccessibilityFields(yy_parser, svg, id) {
     return;
   }
 
-  let title_string = yy_parser.getTitle();
+  let title_string = yy_parser.getAccTitle();
   let description = yy_parser.getAccDescription();
   svg.attr('role', 'img').attr('aria-labelledby', 'chart-title-' + id + ' chart-desc-' + id);
   svg

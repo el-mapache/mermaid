@@ -345,14 +345,14 @@ const setDirection = (dir) => {
   direction = dir;
 };
 
-let title = '';
+let title = 'Class diagram';
 
 export const setTitle = function (txt) {
   let sanitizedText = sanitizeText(txt, configApi.getConfig());
   title = sanitizedText;
 };
 
-export const getTitle = function () {
+export const getAccTitle = function () {
   return title;
 };
 
@@ -370,7 +370,7 @@ export const getAccDescription = function () {
 export default {
   parseDirective,
   setTitle,
-  getTitle,
+  getAccTitle,
   getAccDescription,
   setAccDescription,
   getConfig: () => configApi.getConfig().class,

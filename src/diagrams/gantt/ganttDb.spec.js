@@ -33,6 +33,7 @@ describe('when using the ganttDb', function () {
       ${'getTasks'}             | ${[]}
       ${'getTitle'}             | ${''}
       ${'getAccDescription'}    | ${''}
+      ${'getAccTitle'}          | ${'Gantt chart'}
       ${'getDateFormat'}        | ${''}
       ${'getAxisFormat'}        | ${''}
       ${'getTodayMarker'}       | ${''}
@@ -364,5 +365,14 @@ describe('when using the ganttDb', function () {
   `('should ${type} today marker', ({ expected }) => {
     ganttDb.setTodayMarker(expected);
     expect(ganttDb.getTodayMarker()).toEqual(expected);
+  });
+
+  it('uses the default title for accessibility if no title is set', () => {
+    expect(ganttDb.getAccTitle()).toEqual('Gantt chart');
+
+    const title = 'My gantt chart';
+    ganttDb.setTitle(title);
+
+    expect(ganttDb.getAccTitle()).toEqual(title);
   });
 });
